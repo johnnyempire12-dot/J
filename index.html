@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingdom Armory — Your Digital Kingdom Wayhouse</title>
+<meta name="description" content="Kingdom Armory — books, music, videos, apps and files. Created by warriors. Built for champions.">
+<style>
+:root{--bg:#030405;--panel:#0b0e12;--gold:#d9a62e;--gold2:#f0c34f;--text:#f5f5f3;--muted:#b9b9b4;--line:#30343b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.82)),url("kingdom-armory-hero.png") center top/cover no-repeat;z-index:-2}
+body:after{content:"";position:fixed;inset:0;background:radial-gradient(circle at 50% 25%,transparent 0,rgba(0,0,0,.55) 72%);z-index:-1;pointer-events:none}
+a{text-decoration:none;color:inherit}button{font:inherit}.wrap{width:min(1440px,94%);margin:auto}
+header{position:sticky;top:0;z-index:100;background:rgba(2,3,4,.92);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff12}
+.nav{min-height:88px;display:flex;align-items:center;gap:22px}.logo{display:flex;align-items:center;gap:12px;min-width:340px}
+.crest{width:72px;height:72px;border:3px solid var(--gold);border-radius:14px 14px 25px 25px;display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:24px;position:relative;box-shadow:0 0 25px #d9a62e22}
+.crest:before{content:"♛";position:absolute;top:-22px;font-size:25px}.logo strong{font-size:31px;line-height:.9;letter-spacing:.04em}.logo small{display:block;color:var(--gold);font-size:10px;letter-spacing:.12em;margin-top:9px}
+nav{display:flex;align-items:center;gap:24px;margin-left:auto}nav a{font-weight:700;font-size:14px;color:#eee}nav a:hover,nav a.active{color:var(--gold)}
+.login{border:1px solid var(--gold);padding:12px 22px;border-radius:7px;color:var(--gold)}
+.menu{display:none;margin-left:auto;background:transparent;color:white;border:1px solid var(--line);padding:12px 16px;border-radius:12px;cursor:pointer}
+.searchbar{max-width:650px;margin:12px auto 0;display:flex;gap:0}.searchbar input{flex:1;background:#080b0fdd;border:1px solid #3a3d42;border-right:0;color:white;padding:14px 20px;border-radius:28px 0 0 28px;font-size:15px}.searchbar button{width:62px;border:0;background:var(--gold);color:#171105;border-radius:0 8px 8px 0;font-size:23px;cursor:pointer}
+.hero{min-height:590px;padding:45px 0 25px;display:flex;align-items:center;text-align:center}.hero-inner{max-width:950px;margin:auto}.crown{color:var(--gold);font-size:35px}.eyebrow{color:var(--gold);font-size:11px;font-weight:900;letter-spacing:.2em}.hero h1{font-size:clamp(3.5rem,8vw,7.5rem);line-height:.82;margin:8px 0 18px;text-transform:uppercase;text-shadow:0 7px 30px #000}.hero h1 span{display:block;color:#e7e7e4}.tag{display:inline-block;background:#c28d1f;color:#100d05;padding:10px 28px;border-radius:4px;font-weight:900;letter-spacing:.12em}.hero p{max-width:760px;margin:22px auto;color:#eee;font-size:18px;line-height:1.55}.actions{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:#130e04;border:0;border-radius:6px;padding:15px 28px;font-weight:900;cursor:pointer}.btn.alt{background:#06090d;border:1px solid #777;color:white}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+section{padding:45px 0}.section-title{text-align:center;margin-bottom:25px}.section-title h2{font-size:36px;margin:7px 0}
+.category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.category{min-height:245px;padding:22px;text-align:left;border-radius:13px;background:linear-gradient(145deg,#11151bfa,#07090cf5);border:1px solid var(--line);transition:.2s;position:relative;overflow:hidden}.category:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 20%,#ffffff0d,transparent 35%);pointer-events:none}.category:hover{transform:translateY(-5px);border-color:var(--gold)}.category .icon{font-size:45px}.category h3{font-size:24px;margin:12px 0 8px}.category p{color:#ddd;line-height:1.5;font-size:14px;min-height:45px}.explore{display:inline-block;border:1px solid currentColor;padding:9px 22px;border-radius:5px;font-weight:800;color:var(--gold);margin-top:8px}
+.content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:rgba(9,12,17,.94);border:1px solid var(--line);border-radius:13px;padding:24px}.card h3{margin-top:0}.muted{color:var(--muted);line-height:1.6}.price{color:var(--gold2);font-weight:900;font-size:20px}.book-cover{height:270px;border-radius:9px;background:linear-gradient(145deg,#171a22,#080a0e);display:grid;place-items:center;font-size:70px;border:1px solid #444}
+.creator-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.form{display:grid;gap:10px}.form input,.form textarea,.form select{width:100%;background:#06090d;border:1px solid var(--line);border-radius:8px;color:white;padding:13px}.filebox{border:1px dashed #696d73;border-radius:10px;padding:25px;text-align:center}
+.benefits{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);border-radius:10px;overflow:hidden}.benefit{padding:20px 10px;text-align:center;background:#07090c;border-right:1px solid var(--line)}.benefit:last-child{border-right:0}.benefit b{display:block;color:var(--gold);font-size:12px;margin:8px 0}.benefit span{color:var(--muted);font-size:11px}
+footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted)}
+.modal{position:fixed;inset:0;background:#000c;display:none;place-items:center;z-index:200;padding:20px}.modal.show{display:grid}.modalbox{width:min(470px,100%);background:#0d1117;border:1px solid var(--gold);border-radius:15px;padding:25px;position:relative}.close{position:absolute;right:12px;top:8px;border:0;background:none;color:white;font-size:28px;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(100px);background:#151a20;border:1px solid var(--gold);padding:13px 18px;border-radius:8px;z-index:300;transition:.25s}.toast.show{transform:translateX(-50%) translateY(0)}
+.bottom-nav{display:none}
+@media(max-width:1100px){nav{gap:13px}.logo{min-width:285px}.logo strong{font-size:25px}.category-grid{grid-template-columns:repeat(3,1fr)}.benefits{grid-template-columns:repeat(3,1fr)}.benefit:nth-child(3){border-right:0}}
+@media(max-width:700px){
+body:before{background-position:center top;opacity:.42}
+header{position:sticky}.nav{min-height:76px}.logo{min-width:0;gap:9px}.crest{width:55px;height:58px;font-size:19px}.logo strong{font-size:21px}.logo small{font-size:7px;margin-top:5px}.menu{display:block}nav{display:none}.nav.open nav{display:flex;position:absolute;left:3%;right:3%;top:72px;background:#0c1016f8;border:1px solid var(--line);border-radius:13px;padding:15px;flex-direction:column;gap:17px;align-items:center}
+.searchbar{margin-top:6px;padding:0 4%}.searchbar input{font-size:13px;padding:13px 15px}.searchbar button{width:55px}
+.hero{min-height:520px;padding:25px 0}.hero h1{font-size:3.4rem}.hero p{font-size:15px;padding:0 10px}.tag{font-size:10px;padding:10px 15px}.btn{padding:13px 20px}
+.category-grid,.content-grid,.creator-grid{grid-template-columns:1fr}.category{min-height:215px;text-align:center}.category p{min-height:auto}.benefits{grid-template-columns:1fr 1fr}.benefit:nth-child(even){border-right:0}.benefit:nth-child(odd){border-right:1px solid var(--line)}
+section{padding:35px 0}.section-title h2{font-size:30px}
+.bottom-nav{position:fixed;display:flex;bottom:0;left:0;right:0;height:62px;background:#050608f5;border-top:1px solid #333;z-index:150;justify-content:space-around;align-items:center}.bottom-nav a{font-size:22px;text-align:center;color:#ddd}.bottom-nav small{display:block;font-size:8px;color:#aaa}.bottom-nav a:hover{color:var(--gold)}
+footer{padding-bottom:85px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav" id="nav">
+    <a class="logo" href="#home"><div class="crest">KA</div><div><strong>KINGDOM<br>ARMORY</strong><small>← YOUR DIGITAL KINGDOM WAYHOUSE →</small></div></a>
+    <nav id="mainNav">
+      <a href="#home">⌂ HOME</a><a href="#books">▣ BOOKS</a><a href="#music">♫ MUSIC</a><a href="#videos">▹ VIDEOS</a><a href="#apps">▯ APPS</a><a href="#files">□ FILES</a><a href="#creators">♙ CREATORS</a><a href="#support">♧ SUPPORT</a><a href="#contact">✉ CONTACT</a>
+      <a class="login" href="#" onclick="openModal('loginModal');return false">🔒 LOGIN</a>
+    </nav>
+    <button class="menu" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="searchbar"><input id="searchBox" placeholder="Search for books, music, videos, apps, files..." onkeydown="if(event.key==='Enter')searchSite()"><button onclick="searchSite()">⌕</button></div>
+</header>
+
+<main>
+<section class="hero" id="home"><div class="wrap hero-inner">
+  <div class="crown">♛</div><div class="eyebrow">WELCOME TO</div><h1>KINGDOM <span>ARMORY</span></h1>
+  <div class="tag">YOUR DIGITAL KINGDOM WAYHOUSE</div>
+  <p>The ultimate digital marketplace for Books, Music, Videos, Apps and Files. Created by warriors. Built for champions.</p>
+  <div class="actions"><a class="btn" href="#marketplace">EXPLORE NOW →</a><a class="btn alt" href="#creators">JOIN AS CREATOR ♙</a></div>
+</div></section>
+
+<section id="marketplace"><div class="wrap"><div class="section-title"><div class="eyebrow">THE ARMORY</div><h2>Explore the Kingdom</h2></div>
+<div class="category-grid">
+<a class="category searchable" data-search="books ebook novels education" href="#books"><div class="icon">📖</div><h3>BOOKS</h3><p>Ebooks, Novels, Educational and more</p><span class="explore">EXPLORE</span></a>
+<a class="category searchable" data-search="music songs albums singles instrumentals" href="#music"><div class="icon">🎵</div><h3>MUSIC</h3><p>Albums, Singles, Instrumentals and more</p><span class="explore">EXPLORE</span></a>
+<a class="category searchable" data-search="videos movies series documentaries" href="#videos"><div class="icon">▶️</div><h3>VIDEOS</h3><p>Movies, Series, Documentaries and more</p><span class="explore">EXPLORE</span></a>
+<a class="category searchable" data-search="apps games tools software" href="#apps"><div class="icon">📱</div><h3>APPS</h3><p>Premium Apps, Games, Tools and more</p><span class="explore">EXPLORE</span></a>
+<a class="category searchable" data-search="files templates documents resources" href="#files"><div class="icon">📁</div><h3>FILES</h3><p>Templates, Documents, Resources and more</p><span class="explore">EXPLORE</span></a>
+</div></div></section>
+
+<section id="books"><div class="wrap"><div class="section-title"><div class="eyebrow">BOOKS</div><h2>Book Armory</h2></div><div class="content-grid">
+<article class="card searchable" data-search="most ignored god factor man book">
+<div class="book-cover">📖</div><div class="eyebrow" style="margin-top:15px">FEATURED BOOK</div><h3>The Most Ignored God Factor in Man</h3><p class="muted">A thought-provoking digital book exploring the mysterious gift available to every human being.</p><div class="price">₦10,000</div><button class="btn" onclick="toast('Purchase page is ready — payment integration comes next.')">BUY BOOK</button>
+</article>
+<article class="card"><h3>📚 More books coming</h3><p class="muted">Creators will be able to upload ebooks, novels, guides and educational resources.</p><button class="btn alt" onclick="location.href='#creators'">UPLOAD A BOOK</button></article>
+</div></div></section>
+
+<section id="music"><div class="wrap"><div class="section-title"><div class="eyebrow">MUSIC</div><h2>Music Armory</h2></div><div class="content-grid"><div class="card searchable" data-search="music songs albums"><h3>🎵 Songs & Albums</h3><p class="muted">Discover music from independent creators.</p><button class="btn" onclick="toast('Music marketplace opened.')">EXPLORE MUSIC</button></div><div class="card"><h3>🎧 Creator uploads</h3><p class="muted">Artists will be able to publish their own music and earn from it.</p></div></div></div></section>
+
+<section id="videos"><div class="wrap"><div class="section-title"><div class="eyebrow">VIDEOS</div><h2>Video Armory</h2></div><div class="content-grid"><div class="card searchable" data-search="videos movies series documentary"><h3>🎬 Movies & Videos</h3><p class="muted">A home for authorized videos, documentaries and creator content.</p><button class="btn" onclick="toast('Video marketplace opened.')">EXPLORE VIDEOS</button></div><div class="card"><h3>📤 Publish your video</h3><p class="muted">Creators can upload their own authorized content after registration.</p></div></div></div></section>
+
+<section id="apps"><div class="wrap"><div class="section-title"><div class="eyebrow">APPS</div><h2>App Armory</h2></div><div class="content-grid"><div class="card searchable" data-search="apps games tools"><h3>📱 Apps & Tools</h3><p class="muted">Useful apps, games and digital tools.</p><button class="btn" onclick="toast('App marketplace opened.')">EXPLORE APPS</button></div><div class="card"><h3>🛠️ Developer uploads</h3><p class="muted">Developers can list their software and digital tools.</p></div></div></div></section>
+
+<section id="files"><div class="wrap"><div class="section-title"><div class="eyebrow">FILES</div><h2>File Armory</h2></div><div class="content-grid"><div class="card searchable" data-search="files templates documents pdf zip"><h3>📁 Digital Files</h3><p class="muted">Templates, documents, resources and other authorized downloads.</p><button class="btn" onclick="toast('File marketplace opened.')">EXPLORE FILES</button></div><div class="card"><h3>📤 Upload a file</h3><p class="muted">Creators can upload useful digital resources.</p></div></div></div></section>
+
+<section id="creators"><div class="wrap"><div class="section-title"><div class="eyebrow">JOIN THE ARMORY</div><h2>Become a Creator</h2><p class="muted">Register first. The full creator dashboard and secure storage will be connected to the backend.</p></div>
+<div class="creator-grid"><div class="card"><h3>👑 Register</h3><div class="form"><input id="creatorName" placeholder="Creator name"><input id="creatorEmail" type="email" placeholder="Email address"><input type="password" placeholder="Password"><select><option>Choose creator type</option><option>Author</option><option>Musician</option><option>Video creator</option><option>App developer</option><option>Digital seller</option></select><button class="btn" onclick="registerCreator()">CREATE CREATOR ACCOUNT</button></div></div>
+<div class="card"><h3>📤 Upload Centre</h3><div class="filebox"><input id="fileUpload" type="file" multiple><p class="muted">Select books, songs, videos, apps or files to prepare an upload.</p><button class="btn alt" onclick="prepareUpload()">PREPARE UPLOAD</button></div><p class="muted">Real cloud storage, moderation, payments and creator earnings will be connected in the backend stage.</p></div></div>
+</div></section>
+
+<section id="support"><div class="wrap"><div class="section-title"><div class="eyebrow">WE ARE HERE FOR YOU</div><h2>Support</h2></div><div class="card"><h3>🛟 Need help?</h3><p class="muted">Get help with your account, purchases, downloads or creator profile.</p><button class="btn" onclick="openModal('supportModal')">CONTACT SUPPORT</button></div></div></section>
+<section id="contact"><div class="wrap"><div class="section-title"><div class="eyebrow">GET IN TOUCH</div><h2>Contact</h2></div><div class="card"><h3>📞 Kingdom Armory</h3><p class="muted">Business enquiries, partnerships and general contact.</p><button class="btn" onclick="openModal('contactModal')">CONTACT US</button></div></div></section>
+
+<section><div class="wrap"><div class="benefits"><div class="benefit">🛡️<b>SECURE DOWNLOADS</b><span>Safe & Secure</span></div><div class="benefit">🔐<b>PREMIUM CONTENT</b><span>Quality You Can Trust</span></div><div class="benefit">👥<b>JOIN AS CREATOR</b><span>Upload & Earn</span></div><div class="benefit">🏆<b>FAIR & TRUSTED</b><span>Built for Everyone</span></div><div class="benefit">🎧<b>24/7 SUPPORT</b><span>We Are Here For You</span></div><div class="benefit">🔒<b>YOUR PRIVACY</b><span>Always Protected</span></div></div></div></section>
+</main>
+
+<footer><div class="wrap"><strong>KINGDOM ARMORY</strong><br><small>Your Digital Kingdom Wayhouse · Support · Contact</small></div></footer>
+
+<div class="bottom-nav"><a href="#home">⌂<small>Home</small></a><a href="#books">▣<small>Books</small></a><a href="#music">♫<small>Music</small></a><a href="#files">□<small>Files</small></a><a href="#creators">♙<small>Creator</small></a></div>
+
+<div class="modal" id="loginModal"><div class="modalbox"><button class="close" onclick="closeModal('loginModal')">×</button><h2>🔒 Kingdom Armory Login</h2><div class="form"><input type="email" placeholder="Email"><input type="password" placeholder="Password"><button class="btn" onclick="toast('Login screen is ready for backend authentication.')">LOGIN</button><a href="#creators" onclick="closeModal('loginModal')">New here? Become a creator.</a></div></div></div>
+<div class="modal" id="supportModal"><div class="modalbox"><button class="close" onclick="closeModal('supportModal')">×</button><h2>🛟 Support</h2><div class="form"><input placeholder="Your email"><textarea rows="5" placeholder="Describe your issue"></textarea><button class="btn" onclick="toast('Support request prepared.')">SEND REQUEST</button></div></div></div>
+<div class="modal" id="contactModal"><div class="modalbox"><button class="close" onclick="closeModal('contactModal')">×</button><h2>📞 Contact Kingdom Armory</h2><div class="form"><input placeholder="Your name"><input placeholder="Your email"><textarea rows="5" placeholder="Your message"></textarea><button class="btn" onclick="toast('Message prepared.')">SEND MESSAGE</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+function openModal(id){document.getElementById(id).classList.add('show')}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}
+function searchSite(){
+ const q=document.getElementById('searchBox').value.trim().toLowerCase();
+ if(!q){toast('Type something to search.');return}
+ const cards=[...document.querySelectorAll('.searchable')];
+ cards.forEach(c=>c.style.outline='');
+ const hit=cards.find(c=>(c.dataset.search||'').toLowerCase().includes(q));
+ if(hit){hit.style.outline='2px solid var(--gold)';hit.scrollIntoView({behavior:'smooth',block:'center'});toast('Result found in the Armory.')}
+ else toast('No matching item found yet.')
+}
+function registerCreator(){
+ const n=document.getElementById('creatorName').value.trim();
+ const e=document.getElementById('creatorEmail').value.trim();
+ if(!n||!e){toast('Enter your creator name and email first.');return}
+ toast('Creator registration details captured. Backend connection is next.')
+}
+function prepareUpload(){
+ const f=document.getElementById('fileUpload').files;
+ if(!f.length){toast('Choose a file first.');return}
+ toast(f.length+' file(s) selected and ready for the upload system.')
+}
+window.addEventListener('click',e=>{document.querySelectorAll('.modal.show').forEach(m=>{if(e.target===m)m.classList.remove('show')})})
+</script>
+</body>
+</html>
